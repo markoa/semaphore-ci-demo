@@ -7,10 +7,10 @@ agent:
 
 blocks:
 
-  - name: "Build"
+  - name: Build
     task:
       jobs:
-      - name: Build
+      - name: Build code
         commands:
           - checkout
           - cache restore spring-pipeline
