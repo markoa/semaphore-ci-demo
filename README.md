@@ -1,7 +1,6 @@
 ### The project
 
 This is a simple hello world of spring boot web application.
- 
 
 ##### Features:
  - Simple login screen
