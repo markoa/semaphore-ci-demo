@@ -13,7 +13,7 @@ blocks:
           value: "-Dmaven.repo.local=.m2"
         - name: ENVIRONMENT
           value: "dev"
-        - DOCKER_USERNAME
+        - name: DOCKER_USERNAME
           value: "markoa"
       secrets:
       - name: docker-hub
