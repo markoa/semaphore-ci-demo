@@ -13,6 +13,8 @@ blocks:
           value: "-Dmaven.repo.local=.m2"
         - name: ENVIRONMENT
           value: "dev"
+        - DOCKER_USERNAME
+          value: "markoa"
       secrets:
       - name: docker-hub
       prologue:
@@ -24,6 +26,7 @@ blocks:
       - name: Build and deploy docker container
         commands:
           - mvn -q package -Dmaven.test.skip=true
-          - echo $DOCKER_PASSWORD | docker login  --username "$DOCKER_USERNAME" --password-stdin
+            #- echo $DOCKER_PASSWORD | docker login  --username "$DOCKER_USERNAME" --password-stdin
           - docker build --build-arg ENVIRONMENT="${ENVIRONMENT}" -t "${DOCKER_USERNAME}/spring-pipeline-test:latest" .
-          - docker push "$DOCKER_USERNAME"/spring-pipeline-test:latest
+          - docker images
+            #- docker push "$DOCKER_USERNAME"/spring-pipeline-test:latest
