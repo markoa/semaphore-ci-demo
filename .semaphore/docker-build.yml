@@ -15,8 +15,6 @@ blocks:
           value: "dev"
         - name: DOCKER_USERNAME
           value: "markoa"
-      secrets:
-      - name: docker-hub
       prologue:
         commands:
           - checkout
